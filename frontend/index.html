@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#09070c">
+  <meta name="description" content="17 — O começo de uma história">
+  <title>17 — O começo de uma história</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="ambient"></div>
+  <div id="grain"></div>
+  <div id="progress"><span></span></div>
+
+  <header class="topbar">
+    <span class="brand">17</span>
+    <button id="soundToggle" class="icon-btn" aria-label="Ativar ou desativar música">♫</button>
+  </header>
+
+  <main id="app">
+    <section class="screen active hero" id="hero" data-index="0">
+      <div class="hero-orbit orbit-a"></div>
+      <div class="hero-orbit orbit-b"></div>
+      <div class="hero-content reveal">
+        <span class="eyebrow">17 · O TEU DIA</span>
+        <div class="hero-number">17</div>
+        <p class="hero-subtitle">O começo de uma história.</p>
+        <p class="hero-note">Fiz isto especialmente para ti.</p>
+        <button class="primary glow" data-next="intro">Entrar <span>♡</span></button>
+      </div>
+      <div class="scroll-hint">desliza para começar ↓</div>
+    </section>
+
+    <section class="screen dark" id="intro" data-index="1">
+      <div class="content reveal">
+        <span class="eyebrow">MAIO · 2026</span>
+        <h1>Foi aqui que começou.</h1>
+        <div class="story-copy">
+          <p>Não houve uma grande cena de filme.</p>
+          <p>Não houve um roteiro perfeito.</p>
+          <p>Apenas duas pessoas que se conheceram.</p>
+          <p class="accent">E, sem sabermos naquele momento, começava uma história que ainda está a ser escrita.</p>
+        </div>
+        <button class="text-link" data-next="memories">Continuar <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen blush" id="memories" data-index="2">
+      <div class="content wide reveal">
+        <span class="eyebrow">PEQUENAS MEMÓRIAS</span>
+        <h1>Não temos muitas fotografias.</h1>
+        <p class="lead">E isso não diminui o que já aconteceu.</p>
+        <div class="memory-grid">
+          <article class="memory-card tilt"><span>01</span><b>Primeira foto juntos</b><small>Ainda por criar</small></article>
+          <article class="memory-card tilt"><span>02</span><b>Próximo encontro</b><small>Ainda por escrever</small></article>
+          <article class="memory-card tilt"><span>03</span><b>Próxima memória</b><small>Ainda por acontecer</small></article>
+          <article class="memory-card tilt"><span>04</span><b>Próximo capítulo</b><small>Depende de nós</small></article>
+        </div>
+        <p class="quote">“Algumas histórias começam com fotografias. Outras começam apenas com uma sensação.”</p>
+        <button class="primary soft" data-next="timeline">Ver a nossa linha do tempo</button>
+      </div>
+    </section>
+
+    <section class="screen dark" id="timeline" data-index="3">
+      <div class="content reveal">
+        <span class="eyebrow">A NOSSA LINHA DO TEMPO</span>
+        <h1>Ainda é pequena.</h1>
+        <div class="timeline">
+          <article><i></i><time>MAIO</time><p>Foi quando te conheci.</p></article>
+          <article><i></i><time>DEPOIS</time><p>Começámos a descobrir-nos.</p></article>
+          <article><i></i><time>17</time><p>Hoje é o teu dia.</p></article>
+          <article class="future"><i></i><time>?</time><p>O resto ainda não foi escrito.</p></article>
+        </div>
+        <button class="text-link" data-next="things">Há mais uma coisa →</button>
+      </div>
+    </section>
+
+    <section class="screen paper" id="things" data-index="4">
+      <div class="content wide reveal">
+        <span class="eyebrow">COISAS QUE NOTEI EM TI</span>
+        <h1>Há coisas que não precisam de fotografias.</h1>
+        <div class="reveal-grid">
+          <button class="reveal-card"><span>Uma coisa que reparei em ti…</span><b>o teu jeito único.</b></button>
+          <button class="reveal-card"><span>Uma coisa que gosto em ti…</span><b>a forma como me fazes sorrir.</b></button>
+          <button class="reveal-card"><span>Uma coisa que ainda quero descobrir…</span><b>há muito mais para descobrir.</b></button>
+        </div>
+        <button class="primary dark-btn" data-next="game">Descobrir o jogo</button>
+      </div>
+    </section>
+
+    <section class="screen dark" id="game" data-index="5">
+      <div class="content reveal">
+        <span class="eyebrow">MINI-JOGO</span>
+        <h1>Quanto já me conheces?</h1>
+        <p class="lead">Uma pergunta. Sem pressão. 😏</p>
+        <div class="quiz-box">
+          <div class="quiz-progress"><span id="quizProgress"></span></div>
+          <h2 id="question">Qual destas combina mais comigo?</h2>
+          <div id="answers" class="answers">
+            <button data-answer="0">Chegar cedo</button>
+            <button data-answer="1">Dizer “já estou a chegar” 😂</button>
+            <button data-answer="0">Nunca me atrasar</button>
+          </div>
+          <p id="game-result" class="result"></p>
+          <button class="primary hidden" id="game-next" data-next="letter">Continuar →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen dark letter-screen" id="letter" data-index="6">
+      <div class="content reveal">
+        <span class="eyebrow">UMA CARTA</span>
+        <div id="envelopeScene">
+          <button id="envelope" class="envelope">
+            <div class="envelope-glow"></div>
+            <div class="envelope-shape">✉</div>
+            <small>toca para abrir</small>
+          </button>
+        </div>
+        <article id="letter-text" class="letter hidden">
+          <div class="letter-date">17 · 08 · 2026</div>
+          <p>Conheci-te em maio.</p>
+          <p>Não sei onde esta história vai chegar, nem quero tentar escrever o final antes de vivermos o começo.</p>
+          <p>Sei apenas que gostei de te conhecer, gostei dos momentos que tivemos e espero que ainda tenhamos muitos outros para descobrir.</p>
+          <p>Hoje quero que tenhas um aniversário bonito, leve e cheio de motivos para sorrir.</p>
+          <p class="signature">Feliz aniversário, <span>♡</span></p>
+        </article>
+        <button class="primary glow hidden" id="final-btn" data-next="final">Última surpresa</button>
+      </div>
+    </section>
+
+    <section class="screen final-screen" id="final" data-index="7">
+      <canvas id="confetti"></canvas>
+      <div class="content reveal">
+        <span class="eyebrow">CAPÍTULO 1</span>
+        <div class="final-number">17</div>
+        <h1>Feliz aniversário.</h1>
+        <p class="lead">A nossa história ainda é pequena.</p>
+        <p class="lead">Mas talvez seja justamente por isso que seja bonita.</p>
+        <p class="lead">Ainda podemos escrever quase tudo.</p>
+        <div class="future-chapter">
+          <span>CAPÍTULO 2</span>
+          <b>Ainda não existe.</b>
+          <small>Porque algumas partes desta história não podem ser programadas.</small>
+        </div>
+        <div class="final-note">Obrigado por teres entrado na minha vida. <span>♥</span></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="location-consent" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-icon">⌖</div>
+      <h2>Uma pequena surpresa</h2>
+      <p>Posso usar a localização do teu telemóvel apenas para registar que estiveste aqui no dia do teu aniversário?</p>
+      <small>O navegador só partilha o GPS se deres permissão. Não existe rastreamento contínuo.</small>
+      <div class="modal-actions">
+        <button id="allow-location" class="primary">Permitir</button>
+        <button id="skip-location" class="secondary">Continuar sem isso</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop preload="none">
+    <source src="./assets/audio/ambience.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
