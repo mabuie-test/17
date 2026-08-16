@@ -13,6 +13,7 @@
 </head>
 <body>
   <div id="ambient"></div>
+  <div id="hearts" aria-hidden="true"></div>
   <div id="grain"></div>
   <div id="progress"><span></span></div>
 
@@ -29,6 +30,7 @@
         <span class="eyebrow">17 · O TEU DIA</span>
         <div class="hero-number">17</div>
         <p class="hero-subtitle">O começo de uma história.</p>
+        <p class="hero-dedication">para <span data-name-slot>ti</span></p>
         <p class="hero-note">Fiz isto especialmente para ti.</p>
         <button class="primary glow" data-next="intro">Entrar <span>♡</span></button>
       </div>
@@ -123,17 +125,70 @@
         </div>
         <article id="letter-text" class="letter hidden">
           <div class="letter-date">17 · 08 · 2026</div>
+          <button id="voiceReplay" class="voice-tag" type="button">
+            <span class="voice-dot"></span> a ouvir a minha voz <span class="voice-replay-icon">↻</span>
+          </button>
+          <p class="letter-greeting"><span data-name-slot>Querida</span>,</p>
           <p>Conheci-te em maio.</p>
           <p>Não sei onde esta história vai chegar, nem quero tentar escrever o final antes de vivermos o começo.</p>
           <p>Sei apenas que gostei de te conhecer, gostei dos momentos que tivemos e espero que ainda tenhamos muitos outros para descobrir.</p>
           <p>Hoje quero que tenhas um aniversário bonito, leve e cheio de motivos para sorrir.</p>
           <p class="signature">Feliz aniversário, <span>♡</span></p>
         </article>
-        <button class="primary glow hidden" id="final-btn" data-next="final">Última surpresa</button>
+        <button class="primary glow hidden" id="final-btn" data-next="distance">Continuar</button>
       </div>
     </section>
 
-    <section class="screen final-screen" id="final" data-index="7">
+    <section class="screen dark" id="distance" data-index="7">
+      <div class="content reveal">
+        <span class="eyebrow">UMA COISA HONESTA</span>
+        <h1>Sei que andamos mais calados.</h1>
+        <div class="story-copy">
+          <p>Os dias ficam cheios. As mensagens ficam curtas. Às vezes passam horas e parece que estamos cada um no seu canto.</p>
+          <p>Mas quieto não é o mesmo que ausente.</p>
+          <p class="accent">Continuas a ser a pessoa em quem penso quando o dia finalmente acalma.</p>
+        </div>
+        <button class="text-link" data-next="convite">Há uma coisa que quero propor <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen blush" id="convite" data-index="8">
+      <div class="content reveal">
+        <span class="eyebrow">UM CONVITE A SÉRIO</span>
+        <h1>Vamos resolver isto ao vivo?</h1>
+        <p class="lead">Sem ecrã pelo meio. Só nós os dois, como antes.</p>
+        <div class="invite-options" id="inviteOptions">
+          <button type="button" data-choice="Este fim de semana">Este fim de semana</button>
+          <button type="button" data-choice="Esta semana">Esta semana</button>
+          <button type="button" data-choice="Quando tu escolheres">Quando tu escolheres</button>
+        </div>
+        <textarea id="inviteMessage" class="invite-textarea" maxlength="500" placeholder="Escreve aqui o dia, a hora ou o que te apetecer dizer (opcional)"></textarea>
+        <button class="primary glow" id="sendInvite">Enviar o convite</button>
+        <p id="inviteConfirm" class="invite-confirm hidden">Convite enviado. Fico à espera da tua resposta. ♡</p>
+        <button class="text-link" data-next="box">Ainda falta uma coisa <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen dark" id="box" data-index="9">
+      <div class="content reveal">
+        <span class="eyebrow">CAIXA DE SURPRESA</span>
+        <h1>Só se abre duas vezes.</h1>
+        <p class="lead">Depois disso, fecha-se para sempre. Não a desperdices.</p>
+        <div id="giftBox" class="gift-box">
+          <div class="gift-box-lid"></div>
+          <div class="gift-box-body">
+            <span class="gift-box-ribbon"></span>
+            <span class="gift-box-icon">🎁</span>
+          </div>
+          <div class="gift-box-glow"></div>
+        </div>
+        <button class="primary soft" id="openBoxBtn">Abrir a caixa</button>
+        <div id="boxMessage" class="box-message hidden"></div>
+        <button class="primary glow hidden" id="box-next" data-next="final">Última página <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen final-screen" id="final" data-index="10">
       <canvas id="confetti"></canvas>
       <div class="content reveal">
         <span class="eyebrow">CAPÍTULO 1</span>
@@ -167,6 +222,9 @@
 
   <audio id="bgMusic" loop preload="none">
     <source src="./assets/audio/ambience.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="voiceNote" preload="none">
+    <source src="./assets/audio/voice-note.mp3" type="audio/mpeg">
   </audio>
 
   <script src="./js/app.js"></script>
