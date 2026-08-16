@@ -1,4 +1,4 @@
-const API_URL = "https://YOUR-BACKEND.onrender.com";
+const API_URL = "https://one7-mz8a.onrender.com";
 const sessionId = crypto.randomUUID();
 
 // Personaliza aqui o nome dela. Se deixares vazio, os textos ficam genéricos.
